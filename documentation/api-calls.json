@@ -1,0 +1,20 @@
+[
+  // GET - /pessoa/{id}/relatorio/
+  // Response
+  {
+    "pessoa_id": 1,
+    "nome": "Onias da Rocha Filho",
+    "peso_atual": 151.8,
+    "peso_anterior": 154.5,
+    "peso_inicial": 156.2,
+    "peso_meta": 80
+  },
+  // POST - /pessoa/relatorio/{id}
+  // Request Body
+  {
+    "pessoa_id": 1,
+    "novo_peso": 148,
+    "data":
+  }
+]
+
