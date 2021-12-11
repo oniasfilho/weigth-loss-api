@@ -2,12 +2,12 @@
   // GET - /pessoa/{id}/relatorio/
   // Response
   {
-    "pessoa_id": 1,
-    "nome": "Onias da Rocha Filho",
-    "peso_atual": 151.8,
-    "peso_anterior": 154.5,
-    "peso_inicial": 156.2,
-    "peso_meta": 80
+    "pessoa_id": 1,  //tem no banco
+    "nome": "Onias da Rocha Filho",  //tem no banco
+    "peso_atual": 151.8,  //tem no banco
+    "peso_anterior": 154.5,//tem no banco
+    "peso_inicial": 156.2,//tem no banco
+    "peso_meta": 80 //tem no banco
   },
   // POST - /pessoa/relatorio/{id}
   // Request Body
