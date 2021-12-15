@@ -13,12 +13,10 @@ public class Peso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private long peso;
-    @ManyToOne
-    private Pessoa pessoa;
+    private double peso;
     @JsonFormat(pattern="dd/MM/yyyy")
     @CreationTimestamp
-    @Column(name = "data")
+    @Column(name = "data_criacao")
     private LocalDate dataCriacao;
 }
 

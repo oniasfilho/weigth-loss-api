@@ -9,12 +9,11 @@
     "peso_inicial": 156.2,//tem no banco
     "peso_meta": 80 //tem no banco
   },
-  // POST - /pessoa/relatorio/{id}
+  // POST - /pessoa/relatorio
   // Request Body
   {
     "pessoa_id": 1,
-    "novo_peso": 148,
-    "data":
+    "novo_peso": 148
   }
 ]
 

@@ -1,12 +1,15 @@
 package io.oniasfilho.weightlossapi.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RelatorioRespDTO {
+public class RelatorioDTO {
     private int pessoa_id;
     private String nome;
     private double peso_atual;

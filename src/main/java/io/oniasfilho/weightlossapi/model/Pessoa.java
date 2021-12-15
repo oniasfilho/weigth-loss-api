@@ -2,10 +2,8 @@ package io.oniasfilho.weightlossapi.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -18,4 +16,10 @@ public class Pessoa {
     private int idade;
     private double altura;
     private double meta;
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name = "pessoa_id")
+    private List<Peso> pesos;
 }
