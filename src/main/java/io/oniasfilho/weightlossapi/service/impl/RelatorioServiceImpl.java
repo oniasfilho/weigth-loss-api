@@ -39,24 +39,15 @@ public class RelatorioServiceImpl implements RelatorioService {
     }
 
     public void createNewRelatorio(RelatorioReqDTO relatorio) {
+        //TODO tratar id inexistente
         var pessoa = pessoaRepository.findById(relatorio.getPessoa_id()).get();
         var pesos = pessoa.getPesos();
         var novoPeso = new Peso();
         novoPeso.setPeso(relatorio.getNovo_peso());
         pesos.add(novoPeso);
         pessoa.setPesos(pesos);
-        pessoa = pessoaRepository.save(pessoa);
+        pessoaRepository.save(pessoa);
 
-        var relatorioNovo = RelatorioDTO.builder()
-                .pessoa_id(relatorio.getPessoa_id())
-                .nome(pessoa.getNome())
-                .peso_atual(pesos.get(pessoa.getPesos().size() - 1).getPeso())
-                .peso_anterior(pesos.get(pesos.size() - 2).getPeso())
-                .peso_inicial(pesos.get(0).getPeso())
-                .peso_meta(pessoa.getMeta())
-                .build();
-
-        System.out.println("montado");
     }
 
 

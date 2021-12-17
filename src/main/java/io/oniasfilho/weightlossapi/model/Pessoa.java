@@ -1,6 +1,9 @@
 package io.oniasfilho.weightlossapi.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
@@ -8,6 +11,9 @@ import java.util.List;
 
 @Data
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
