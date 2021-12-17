@@ -1,0 +1,33 @@
+[
+  //request
+  curl 'https://api.twilio.com/2010-04-01/Accounts/ACf1a42153f6e3cae6b56824fe5c71785c/Messages.json' -X POST \
+  --data-urlencode 'To=whatsapp:+556581522040' \
+  --data-urlencode 'From=whatsapp:+14155238886' \
+  --data-urlencode 'Body=Seu log semanal de peso esta pronto.' \
+  -u ACf1a42153f6e3cae6b56824fe5c71785c:[AuthToken]
+  //response
+  {
+  "sid": "SM45f6709ce51643d698bb241ef44ab6d5",
+  "date_created": "Wed, 15 Dec 2021 13:02:45 +0000",
+  "date_updated": "Wed, 15 Dec 2021 13:02:45 +0000",
+  "date_sent": null,
+  "account_sid": "ACf1a42153f6e3cae6b56824fe5c71785c",
+  "to": "whatsapp:+556581522040",
+  "from": "whatsapp:+14155238886",
+  "messaging_service_sid": null,
+  "body": "Seu log semanal de peso esta pronto.",
+  "status": "queued",
+  "num_segments": "1",
+  "num_media": "0",
+  "direction": "outbound-api",
+  "api_version": "2010-04-01",
+  "price": null,
+  "price_unit": null,
+  "error_code": null,
+  "error_message": null,
+  "uri": "/2010-04-01/Accounts/ACf1a42153f6e3cae6b56824fe5c71785c/Messages/SM45f6709ce51643d698bb241ef44ab6d5.json",
+  "subresource_uris": {
+    "media": "/2010-04-01/Accounts/ACf1a42153f6e3cae6b56824fe5c71785c/Messages/SM45f6709ce51643d698bb241ef44ab6d5/Media.json"
+  }
+}
+]
