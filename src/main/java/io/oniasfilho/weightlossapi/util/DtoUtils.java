@@ -30,9 +30,10 @@ public class DtoUtils {
         pessoas.forEach(pessoa -> {
             var pesosDTO = pesosToListOfHistoricoDTO(pessoa.getPesos());
             historicoGeral.add(new HistoricoPessoaDTO().builder()
-                    .nome(pessoa.getNome())
-                    .historico(pesosDTO)
-                    .build()
+                            .id(pessoa.getId())
+                            .nome(pessoa.getNome())
+                            .historico(pesosDTO)
+                            .build()
             );
         });
 

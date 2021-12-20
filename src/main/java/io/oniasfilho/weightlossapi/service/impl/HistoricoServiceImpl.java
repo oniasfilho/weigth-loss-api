@@ -23,7 +23,7 @@ public class HistoricoServiceImpl implements HistoricoService {
         var pessoa = repository.findById(pessoaId).get();
         var historicoDto = pesosToListOfHistoricoDTO(pessoa.getPesos());
         var historicoPessoaDto = new HistoricoPessoaDTO();
-
+        historicoPessoaDto.setId(pessoa.getId());
         historicoPessoaDto.setNome(pessoa.getNome());
         historicoPessoaDto.setHistorico(historicoDto);
 

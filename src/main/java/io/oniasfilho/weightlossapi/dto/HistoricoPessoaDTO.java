@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HistoricoPessoaDTO {
+    private int id;
     private String nome;
     private List<HistoricoDTO> historico;
 }
