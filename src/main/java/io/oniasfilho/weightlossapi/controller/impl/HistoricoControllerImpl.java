@@ -2,6 +2,7 @@ package io.oniasfilho.weightlossapi.controller.impl;
 
 import io.oniasfilho.weightlossapi.controller.HistoricoController;
 import io.oniasfilho.weightlossapi.dto.HistoricoDTO;
+import io.oniasfilho.weightlossapi.dto.HistoricoPessoaDTO;
 import io.oniasfilho.weightlossapi.repository.PessoaRepository;
 import io.oniasfilho.weightlossapi.service.HistoricoService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,12 @@ public class HistoricoControllerImpl implements HistoricoController {
     }
 
     @GetMapping("/historico/{pessoaId}")
-    public List<HistoricoDTO> getHistorico(@PathVariable int pessoaId) {
-        return service.getHistorico(pessoaId);
+    public HistoricoPessoaDTO getHistoricoById(@PathVariable int pessoaId) {
+        return service.getHistoricoById(pessoaId);
+    }
+
+    @GetMapping("/historico")
+    public List<HistoricoPessoaDTO> getAllHistoricos() {
+        return service.getAllHistoricos();
     }
 }

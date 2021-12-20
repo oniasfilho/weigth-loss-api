@@ -1,12 +1,14 @@
 package io.oniasfilho.weightlossapi.service.impl;
 
-import io.oniasfilho.weightlossapi.dto.HistoricoDTO;
+import io.oniasfilho.weightlossapi.dto.HistoricoPessoaDTO;
 import io.oniasfilho.weightlossapi.repository.PessoaRepository;
 import io.oniasfilho.weightlossapi.service.HistoricoService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static io.oniasfilho.weightlossapi.util.DtoUtils.pesosToListOfHistoricoDTO;
+import static io.oniasfilho.weightlossapi.util.DtoUtils.pessoasToListOfHistoricoPessoaDTO;
 
 @Service
 public class HistoricoServiceImpl implements HistoricoService {
@@ -17,14 +19,20 @@ public class HistoricoServiceImpl implements HistoricoService {
         this.repository = repository;
     }
 
-    public List<HistoricoDTO> getHistorico(int pessoaId) {
+    public HistoricoPessoaDTO getHistoricoById(int pessoaId) {
         var pessoa = repository.findById(pessoaId).get();
-        var historicoDto = new ArrayList<HistoricoDTO>();
-        pessoa.getPesos().forEach(
-                peso -> historicoDto.add(
-                        new HistoricoDTO(peso.getPeso(), peso.getDataCriacao())
-                )
-        );
-        return historicoDto;
+        var historicoDto = pesosToListOfHistoricoDTO(pessoa.getPesos());
+        var historicoPessoaDto = new HistoricoPessoaDTO();
+
+        historicoPessoaDto.setNome(pessoa.getNome());
+        historicoPessoaDto.setHistorico(historicoDto);
+
+        return historicoPessoaDto;
+    }
+
+    public List<HistoricoPessoaDTO> getAllHistoricos() {
+        var pessoas = repository.findAll();
+        var historicoGeral = pessoasToListOfHistoricoPessoaDTO(pessoas);
+        return historicoGeral;
     }
 }

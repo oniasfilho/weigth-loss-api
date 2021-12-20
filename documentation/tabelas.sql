@@ -26,3 +26,5 @@ INSERT INTO peso (pessoa_id, peso, data_criacao)
 VALUES (1, 154.5, '2021-12-02');
 INSERT INTO peso (pessoa_id, peso, data_criacao)
 VALUES (1, 151.8, '2021-12-09');
+INSERT INTO peso (pessoa_id, peso, data_criacao)
+VALUES (1, 151.5, '2021-12-09');
